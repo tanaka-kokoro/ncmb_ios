@@ -16,7 +16,7 @@ jobs:
         args: unzip -qq appledoc-2.2.1.zip -d appledoc-2.2.1
     - run: sudo chown -R runner appledoc-2.2.1 
     - run: |
-        cp -rp appledoc-2.2.1 /usr/local/bin
+        cp -rp appledoc-2.2.1/appledoc /usr/local/bin
         appledoc --version
         appledoc AppledocSetting.plist
         ls
