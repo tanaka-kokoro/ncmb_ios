@@ -7,12 +7,20 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
+    - name: download appledoc
+      run: |
+        wget https://github.com/tomaz/appledoc/releases/download/2.2.1/appledoc-2.2.1.zip
+    - name: unzip appledoc
+      uses: montudor/action-zip@v1
       with:
-        ref: ${{ github.head_ref }}
-    - name: Install appledoc
-      run: brew install appledoc
-    - name: Generate Reference
-      run: appledoc --create-html --no-create-docset --output ~/docs .
+        args: unzip -qq appledoc-2.2.1.zip -d appledoc-2.2.1
+    - run: |
+        cp appledoc /usr/local/bin
+        cp -Rf Templates/ ~/.appledoc
+        appledoc --version
+        pwd
+        ls docs/
+
     # - name: Setup git
     #   env:
     #     EMAIL: ${{ secrets.EMAIL }}
@@ -28,11 +36,11 @@ jobs:
     #       git commit -m "Auto replace reference files"
     #       git push
     #     fi
-    - name: zip docs
-      run: zip -r docs.zip docs/
+    # - name: zip docs
+    #   run: zip -r docs.zip docs/
 
-    - name: Archive artifacts
-      uses: actions/upload-artifact@v2
-      with:
-        name: docs
-        path: docs.zip
+    # - name: Archive artifacts
+    #   uses: actions/upload-artifact@v2
+    #   with:
+    #     name: docs
+    #     path: docs.zip
