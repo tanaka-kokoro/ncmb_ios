@@ -16,7 +16,7 @@ jobs:
         args: unzip -qq master.zip -d appledoc-master
     - run: sudo chown -R runner appledoc-master
     - run: |
-        cd appledoc-master
+        cd appledoc-master/appledoc-master
         ls
     - run: |
         sudo sh install-appledoc.sh
