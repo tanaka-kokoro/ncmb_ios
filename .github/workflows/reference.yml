@@ -17,10 +17,9 @@ jobs:
     - run: sudo chown -R runner appledoc-2.2.1 
     - run: |
         cp -rp appledoc-2.2.1 /usr/local/bin
-        cp -Rf Templates/ ~/.appledoc
         appledoc --version
-        pwd
-        ls docs/
+        appledoc AppledocSetting.plist
+        ls
 
     # - name: Setup git
     #   env:
