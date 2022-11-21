@@ -13,10 +13,10 @@ jobs:
     - name: unzip appledoc
       uses: montudor/action-zip@v1
       with:
-        args: unzip -qq appledoc-master.zip -d appledoc
-    - run: sudo chown -R runner appledoc
+        args: unzip -qq appledoc-master.zip -d appledoc-master
+    - run: sudo chown -R runner appledoc-master
     - run: |
-        cd appledoc
+        cd appledoc-master
         sudo sh install-appledoc.sh
         appledoc --version
         appledoc AppledocSetting.plist
