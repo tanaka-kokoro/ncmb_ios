@@ -15,6 +15,9 @@ jobs:
       with:
         args: unzip -qq appledoc-2.2.1.zip -d appledoc-2.2.1
     - run: |
+        ls
+        pwd
+    - run: |
         cp appledoc /usr/local/bin
         cp -Rf Templates/ ~/.appledoc
         appledoc --version
