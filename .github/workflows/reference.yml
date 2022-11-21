@@ -18,7 +18,7 @@ jobs:
         ls
         pwd
     - run: |
-        cp appledoc /usr/local/bin
+        cp appledoc-2.2.1 /usr/local/bin
         cp -Rf Templates/ ~/.appledoc
         appledoc --version
         pwd
