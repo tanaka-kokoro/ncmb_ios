@@ -17,6 +17,8 @@ jobs:
     - run: sudo chown -R runner appledoc-master
     - run: |
         cd appledoc-master
+        ls
+    - run: |
         sudo sh install-appledoc.sh
         appledoc --version
         appledoc AppledocSetting.plist
