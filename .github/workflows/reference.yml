@@ -17,12 +17,9 @@ jobs:
     - run: sudo chown -R runner appledoc-master
     - run: |
         cd appledoc-master/appledoc-master
-        ls
-    - run: |
         sudo bash install-appledoc.sh
         appledoc --version
         appledoc AppledocSetting.plist
-        ls
 
     # - name: Setup git
     #   env:
