@@ -19,7 +19,7 @@ jobs:
         cd appledoc-master/appledoc-master
         ls
     - run: |
-        sudo sh install-appledoc.sh
+        sudo bash install-appledoc.sh
         appledoc --version
         appledoc AppledocSetting.plist
         ls
