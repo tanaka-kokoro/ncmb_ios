@@ -4,7 +4,7 @@ on: [push]
 
 jobs:
   generate_reference-and-commit:
-    runs-on: ubuntu-latest
+    runs-on: macos-latest
     steps:
     - uses: actions/checkout@v3
     - name: download appledoc
